@@ -1,1 +1,19 @@
-# variable: True
+---
+# HEIMDALL_VOLUME_DIR: Location of the persistent volume used with the container
+HEIMDALL_VOLUME_DIR: '/mnt/heimdall'
+# HEIMDALL_VOLUME_MIN_SIZE: If HEIMDALL_VOLUME_MIN_SIZE doesn't exist, we will make a new LV this size nad mount it at HEIMDALL_VOLUME_DIR
+# HEIMDALL_VOLUME_MIN_SIZE: If the existing partition is smaller than this value, it will grow it to this size
+HEIMDALL_VOLUME_MIN_SIZE: '2G'
+# HEIMDALL_LVM_LV_NAME: If HEIMDALL_LVM_LV_NAME doens't exist, we will create this LV of HEIMDALL_VOLUME_MIN_SIZE on VG HEIMDALL_LVM_VG_NAME mounted to HEIMDALL_VOLUME_DIR
+HEIMDALL_LVM_LV_NAME: 'lvm_heimdall'
+HEIMDALL_LVM_VG_NAME: 'rhel'
+# HEIMDALL_SERVICE_ACCOUNT: This local account will be created to run the container rootless
+HEIMDALL_SERVICE_ACCOUNT: 'srv_heimdall'
+HEIMDALL_URL: 'heimdall.example.com'
+HEIMDALL_ENV_TZ: 'America/New_York'
+# If HEIMDALL_SSL_PATH doesn't exist, it will be created
+HEIMDALL_SSL_PATH: '/etc/nginx/certs/'
+HEIMDALL_SSL_CERT_NAME: 'heimdall.crt'
+HEIMDALL_SSL_KEY_NAME: 'heimdall.key'
+# HEIMDALL_SSL_CERT_PATH_COPY: define a path if you want to copy a cert and key over
+# HEIMDALL_SSL_KEY_PATH_COPY: define a path if you want to copy a cert and key over
